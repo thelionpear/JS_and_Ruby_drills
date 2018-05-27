@@ -8,10 +8,11 @@ def alphabetize
     user_word = gets.strip 
     #take the word and break it into pieces
     user_word_array = user_word.split("")
+    length = user_word_array.length 
     #assign a value to each item
-    while alphabetize_string.length < user_word_array.length 
-        x = 0
-        
+    x = 0
+    while alphabetize_string.length < length 
+        binding.pry 
         if user_word_array[x] < user_word_array[x+1]
             
             lower_letter = user_word_array[x]
@@ -20,8 +21,9 @@ def alphabetize
         else 
             x += 1 
         end 
-        alphabetize_string << lower_letter 
     end 
+    alphabetize_string << lower_letter 
+    user_word_array.delete(lower_letter)
 end 
 
 alphabetize 
